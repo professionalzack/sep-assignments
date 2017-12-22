@@ -7,11 +7,24 @@ class MyStack
   end
 
   def push(item)
+
+      @stack << item
+      self.top = item
+
   end
 
   def pop
+    popped = self.top
+    @stack.delete(top)
+    self.top = @stack[@stack.length - 1]
+    popped
   end
 
   def empty?
+    if self.top == nil
+      return true
+    else
+      return false
+    end
   end
 end
